@@ -62,4 +62,12 @@ function do_arithmetic_operations() {
   // next the value of dec is assigned to e
   document.write("<p>Dec after pre-decrement: " + Dec);
   document.write("<p>E after pre-decrement of Dec: " + e);
+
+  // BODMAS (braces, order, division and multiplication, addition and subtraction)
+  var a = 1,
+    b = 2,
+    c = 3,
+    d = 4;
+  var e = a * b - (c * d) / 2;
+  document.write("<p>BODMAS Rule: " + e);
 }

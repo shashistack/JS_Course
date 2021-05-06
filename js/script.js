@@ -14,6 +14,7 @@ document.write(
 // boolean (True or False)
 
 // var 123 = 10; // not allowed, cannot start variable name with a number
+//var if = true; // cannot use reserved keywords as variable names, like: if, else, switch, while, function
 
 var a = 100034; // global variable
 var A = 154234234;
