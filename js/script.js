@@ -1,22 +1,27 @@
 //alert("Hello world");
 
 // console is useful for developer to print some useful information to the browser console.
+console.log("Welcome to browser console");
 console.log(3 + 3);
-document.write("Hello!");
+// We can print something on the page directly
+document.write(
+  "This line is printed using javascript! Open the console to see more messages... press F12"
+);
 
-// Data Types
+// Basic Data Types
 // Numeric
 // Strings
 // boolean (True or False)
 
 // var 123 = 10; // not allowed, cannot start variable name with a number
+
 var a = 100034; // global variable
 var A = 154234234;
 var b = "hello"; // global scope
 //let b = 5; // not allowed in scope, already declared
 var c = true;
 var d;
-d = 10.3;
+d = 10.3; // we can also assign value after declaring the variable
 
 //console.log(a + A);
 console.log("B:" + b);
