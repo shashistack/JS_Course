@@ -15,7 +15,7 @@ function while_operation() {
     document.write("A is: " + a + ", less than 200 <br>");
     a += 10;
     if (a == 150) {
-      break;
+      break; // stop and come out of the loop
     }
   }
   document.write("Out of While loop<br>");

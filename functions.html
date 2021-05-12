@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Functions</title>
+  </head>
+  <body>
+    <div
+      style="width: 300px; color: green; border: 1px solid red; padding: 10px"
+    >
+      Functions
+    </div>
+    <!-- <noscript>Javascript is disabled in your browser</noscript> -->
+    <script src="js/functions.js"></script>
+    <h2>Functions in Javascript</h2>
+    <p>
+      <script>
+        var f3 = function3();
+        console.log(f3);
+      </script>
+    </p>
+
+    <script>
+      function1();
+      var result = function2();
+      document.write("<br>" + result);
+      document.write("<br>" + function3());
+      var a = 100,
+        b = 50,
+        c = 20;
+      document.write("<br>" + do_sum(a, b, c));
+      document.write("<br>" + do_calculation(10, 20)); // (10,20,null)
+      document.write("<br>" + add_numbers(10, 20, 5, 5)); // (10,20,null)
+      document.write("<br>" + add_numbers(10, 20, null, 5)); // (10,20,null)
+      document.write("<br>Nested Function Result: " + nested_function());
+      document.write("<br>Named Function Result: " + func());
+      document.write("<br>Modern JS Function Result: " + adv_func(1, 2, 3));
+    </script>
+  </body>
+</html>

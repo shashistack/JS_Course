@@ -13,14 +13,16 @@ function for_example() {
     }
     document.write("Executing For Loop: ");
   }
-  document.write("<br>");
+  document.write("<br><br><br>");
 
   for (let i = 10; i > 0; i--) {
     document.write("I value is: " + i + "<br>");
   }
-  document.write("<br>");
+  document.write("<br><br>");
 
-  //   for (var i = 1; i > 0; i * 2) {
-  //     document.write("I value is: " + i + "<br>");
-  //   }
+  for (let i = 1; i <= 10; i++) {
+    console.log("Inside ForLoop iteration: " + i);
+    if (i <= 5) continue;
+    document.write("I is: " + i + "<br>");
+  }
 }
