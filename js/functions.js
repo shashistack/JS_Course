@@ -29,10 +29,30 @@ function nested_function() {
   return add_numbers(1, 2, 3, 4);
 }
 
+// Anonymous Function (no name for function)
 var func = function () {
-  // Named Function
   return "Hello world";
 };
 
-// Modern way of declaring functions
+// Anonymous function with params
+var do_multiplication = function(x,y) {
+  return x * y;
+}
+
+// Modern way of declaring functions, using Function constructor. Last param is the function body, others are params
 var adv_func = new Function("a", "b", "c", "return a+b+c");
+
+// passing default parameters
+function check_if_holiday(day='monday') {
+  if(day == 'sunday') {
+    return("Today is a Holiday");
+  }
+  else {
+    return("Today is not a holiday");
+  }
+}
+
+// function with unlimited parameters as array
+function function_with_array_of_params(...params) {
+  return "Totally " + params.length + " parameters: " + params;
+}

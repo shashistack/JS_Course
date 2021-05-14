@@ -32,8 +32,18 @@
       document.write("<br>" + add_numbers(10, 20, 5, 5)); // (10,20,null)
       document.write("<br>" + add_numbers(10, 20, null, 5)); // (10,20,null)
       document.write("<br>Nested Function Result: " + nested_function());
-      document.write("<br>Named Function Result: " + func());
+      document.write("<br>Anonymous Function Result: " + func());
+      document.write("<br>Calling an Anonymous Function with params: " + do_multiplication(5,10));
       document.write("<br>Modern JS Function Result: " + adv_func(1, 2, 3));
+      document.write("<br>Calling a function which assumes default parameters: " + check_if_holiday());
+      document.write("<br>Calling a function which can accept unlimited parameters as an array: " + function_with_array_of_params(1,2,3,4.5,'Hello'));
+
+      document.write("<br>Anonymous Recursive Function: ");
+      // calls itself
+      (function() {
+        var msg = "I am from anonymous function";
+        document.write(msg)
+      })()
     </script>
   </body>
 </html>
