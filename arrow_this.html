@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Arrow Functions</title>
+  </head>
+  <body>
+    <div
+      style="width: 300px; color: green; border: 1px solid red; padding: 10px"
+    >
+    Arrow Functions
+    </div>
+    <script src="js/arrow_this.js"></script>
+    <!-- <noscript>Javascript is disabled in your browser</noscript> -->
+
+    <h2>Examples</h2>
+    <script>
+        let x = new Person();
+        x.printName();
+        
+        console.log("\n");
+
+        let y = new PersonArrow();
+        y.printName();
+    </script>
+    <br><br>
+    <button id="btn">Button 1</button>
+    <script>
+    document.getElementById("btn").addEventListener("click", whoiscallingthis1);
+    </script>
+    
+    <button onclick="whoiscallingthis2()">Button 2</button>
+  </body>
+</html>

@@ -52,7 +52,7 @@ function check_if_holiday(day='monday') {
   }
 }
 
-// function with unlimited parameters as array
-function function_with_array_of_params(...params) {
-  return "Totally " + params.length + " parameters: " + params;
+// function with parameters as array
+function function_with_array_of_params() {
+  console.log("Arguments: " + arguments.length);
 }
