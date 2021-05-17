@@ -35,24 +35,23 @@ var func = function () {
 };
 
 // Anonymous function with params
-var do_multiplication = function(x,y) {
+var do_multiplication = function (x, y) {
   return x * y;
-}
+};
 
 // Modern way of declaring functions, using Function constructor. Last param is the function body, others are params
 var adv_func = new Function("a", "b", "c", "return a+b+c");
 
 // passing default parameters
-function check_if_holiday(day='monday') {
-  if(day == 'sunday') {
-    return("Today is a Holiday");
-  }
-  else {
-    return("Today is not a holiday");
+function check_if_holiday(day = "monday") {
+  if (day == "sunday") {
+    return "Today is a Holiday";
+  } else {
+    return "Today is not a holiday";
   }
 }
 
 // function with parameters as array
 function function_with_array_of_params() {
-  console.log("Arguments: " + arguments.length);
+  console.log("Arguments: " + arguments.length + JSON.stringify(arguments));
 }
