@@ -1,33 +1,112 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JavaScript Arrow Functions</title>
-  </head>
-  <body>
-    <div
-      style="width: 300px; color: green; border: 1px solid red; padding: 10px"
-    >
+
+<head>
+  <title>JavaScript Arrow Functions</title>
+</head>
+
+<body>
+  <div style="width: 300px; color: green; border: 1px solid red; padding: 10px">
     Arrow Functions
-    </div>
-    <script src="js/arrow_this.js"></script>
-    <!-- <noscript>Javascript is disabled in your browser</noscript> -->
+  </div>
+  <script src="js/arrow_this.js"></script>
+  <!-- <noscript>Javascript is disabled in your browser</noscript> -->
 
-    <h2>Examples</h2>
-    <script>
-        let x = new Person();
-        x.printName();
-        
-        console.log("\n");
+  <h2>Examples</h2>
+  <script>
+    let x = new Person();
+    x.getAge();
 
-        let y = new PersonArrow();
-        y.printName();
-    </script>
-    <br><br>
-    <button id="btn">Button 1</button>
-    <script>
-    document.getElementById("btn").addEventListener("click", whoiscallingthis1);
-    </script>
-    
-    <button onclick="whoiscallingthis2()">Button 2</button>
-  </body>
+    console.log("\n");
+
+    let y = new PersonArrow();
+    y.getAge();
+
+    const person = {
+      talk() {
+        setTimeout(function () {
+          console.log(this); // "this" refers to global scope (window object), not person object
+        }, 1000);
+      }
+    };
+    person.talk(); // prints window object
+
+    const person2 = {
+      talk() {
+        var self = this; // assigning "this" to a variable
+        setTimeout(function () {
+          console.log("self", self); // now we have access to person scope
+        }, 1000);
+      }
+    };
+    person2.talk(); // prints person object
+
+    const person3 = {
+      talk() {
+        setTimeout(() => {
+          console.log("self", this); // we can access the person scope correctly, with arrow function
+        }, 1000);
+      }
+    };
+    person3.talk(); // prints person object
+
+
+    function Car() {
+      this.speed = 0;
+
+      this.speedUp = function (speed) {
+        this.speed = speed;
+        setTimeout(function () {
+          console.log(this.speed); // undefined
+        }, 1000);
+
+      };
+    }
+    let car1 = new Car();
+    car1.speedUp(50); // Inside the anonymous function of the setTimeOut() function, the this.speed is undefine, because it cannot access the correct scope of the variable
+
+
+    function Car2() {
+      this.speed = 0;
+
+      this.speedUp = function (speed) {
+        this.speed = speed;
+        let self = this; // work-around
+        setTimeout(function () {
+          console.log(self.speed);
+        }, 1000);
+
+      };
+    }
+    let car = new Car2();
+    car.speedUp(50); // we can get proper reference to speed variable inside inner function, with the help of temporary variable: self. But this is not recommended approach
+
+    function Car3() {
+      this.speed = 0;
+
+      this.speedUp = function (speed) {
+        this.speed = speed;
+        setTimeout(
+          () => console.log(this.speed),
+          1000);
+
+      };
+    }
+    let car = new Car3();
+    car.speedUp(50); // we can get proper reference of speed variable when we define inner function as arrow function
+  </script>
+  <br /><br />
+
+  <!--
+    Will discuss this with event handling
+  <button id="btn">Button 1</button>
+  <script>
+    document
+      .getElementById("btn")
+      .addEventListener("click", whoiscallingthis1);
+  </script>
+
+  <button onclick="whoiscallingthis2()">Button 2</button>-->
+</body>
+
 </html>

@@ -30,11 +30,12 @@ let add_numbers = (a, b) => {
 };
 console.log(add_numbers(10, 20));
 
-// function with unlimited parameters as array (Rest parameter)
+// function with unlimited parameters as array (Spreading parameters)
 function function_with_array_of_params(...abc) {
   return "Totally " + abc.length + " parameters: " + abc;
 }
 
+// Spread (Rest) parameters as array
 var af = (...p) => console.log(p);
 af(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 

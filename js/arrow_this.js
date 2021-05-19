@@ -1,43 +1,56 @@
+//var age = 30; // global variable
+
+// A Person object
+function Person() {
+  this.name = 'Jack';
+  this.age = 25;
+  console.log("This inside function: " + this);
+
+  this.getAge = function () {
+    // this is accessible
+    console.log("Age inside function: " + this.age);
+
+    function innerFunc() {
+
+      // this refers to the global object
+      console.log("This inside inner normal function: " + this);
+      console.log("Age inside inner normal function: " + this.age);
+    }
+    innerFunc();
+  }
+}
+
+// Another Person object
+function PersonArrow() {
+  this.name = 'Jack';
+  this.age = 25;
+  console.log("This inside function: " + this);
+
+  this.getAge = function () {
+    // this is accessible
+    console.log("Age inside function: " + this.age);
+
+    let innerFunc = () => {
+      // this will now refer parent scope
+      console.log("This inside inner arrow function: " + this);
+      console.log("Age inside inner arrow function: " + this.age);
+    }
+    innerFunc();
+  }
+}
+
+
 // Owner of the below function is the button
 function whoiscallingthis1() {
-    console.log("Caller: " + this);
+  console.log("Caller: " + this);
 }
 
-// Owner of the below function is the global window
-whoiscallingthis2 = () => {
-    console.log("Caller: " + this);
+// Owner of the below function is the global window, because this will refer to parent scope in case of arrow functions
+// whoiscallingthis2 = () => {
+//   console.log("Caller: " + this);
+// };
+
+function whoiscallingthis2() {
+  console.log("Caller: " + this);
 }
 
-function Person() {
-    this.name = 'Ramesh'; // global
-    this.printName = function () {
-
-        // this is accessible locally
-        console.log("Local value of Name: " + this.name);
-
-        function innerFunc() {
-            // this refers to the global object
-            console.log("Global value of Name: " + this.name);
-            console.log("This: " + this);
-            console.log("This.name: " + this.name);
-        }
-        innerFunc();
-    }
-}
-
-function PersonArrow() {
-    this.name = 'Suresh'; // global
-    this.printName = function () {
-        
-        // this is accessible locally
-        console.log("Local value of Name: " + this.name);
-
-        // Arrow function can refer parent scope
-        let innerFunc = () => {
-            console.log("Global value of Name: " + this.name);
-            console.log("This: " + this);
-            console.log("This.name: " + this.name);
-        }
-        innerFunc();
-    }
-}
