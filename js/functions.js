@@ -55,3 +55,10 @@ function check_if_holiday(day = "monday") {
 function function_with_array_of_params() {
   console.log("Arguments: " + arguments.length + JSON.stringify(arguments));
 }
+
+// Prompt
+function getName() {
+  var name = prompt("What is your name");
+  alert("Welcome: " + name);
+}
+
