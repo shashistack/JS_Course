@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Events</title>
+</head>
+
+<body onload="bodyLoaded()">
+    <div style="width: 300px; color: green; border: 1px solid red; padding: 10px">
+        Events
+    </div>
+    <!-- <noscript>Javascript is disabled in your browser</noscript> -->
+    <script src="js/events.js"></script>
+    <h2>Events in Javascript</h2>
+
+    <button onclick='btn_click(); btn2_click()'>I am a Button</button>
+    <input type="button" value="Sample Button" onmouseover="mouseOnBtn()" onmouseout="mouseOffBtn()">
+
+    <p><a id="google_link" href="http://www.google.com" onmouseover="expandLink()">Google</a></p>
+
+    <form id="contact_form" action="http://localhost/form.php" method="POST" onsubmit="return submitForm()"
+        autocomplete="off">
+        <p><b>Enter your information</b></p>
+        <p>
+            <label>Name</label>:
+            <input type="text" id="username" name="username" maxlength="30" onblur="blur_name()" />
+        </p>
+        <p>
+            <label>Password</label>:
+            <input type="password" id="pwd" name="pwd" />
+        </p>
+        <input type="hidden" id="form_name" name="form_name" value="contact_form" />
+        <p>
+            Mobile:
+            <input type="text" name="mobile" id="mobile_no" placeholder="909090909090"
+                onchange="onchange_mobile(this.value)" />
+        </p>
+        <p>City: <input type="text" name="city" id="city" /></p>
+        <span>I have a </span><br />
+        <input type="checkbox" id="vehicle1" name="vehicle" value="Bike" />
+        <label for="vehicle1"> bike</label><br />
+        <input type="checkbox" id="vehicle2" name="vehicle" value="Car" />
+        <label for="vehicle2"> car</label><br />
+        <input type="checkbox" id="vehicle3" name="vehicle" value="Boat" />
+        <label for="vehicle3"> boat</label><br /><br />
+        <textarea placeholder="Write something about yourself" id="biography" name="biography" rows="4" cols="40"
+            onkeyup="handle_input_length(this, Event)"></textarea>
+        <br />
+        <table id="inside_form">
+            <tr>
+                <td>
+                    <label>I can speak:</label>
+                </td>
+                <td>
+                    <select name="languages" id="lang_dropdown" onchange="getLanguage(this)">
+                        <option value="">Select</option>
+                        <option value="tel">Telugu</option>
+                        <option value="hin">Hindi</option>
+                        <option value="eng">English</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>I want to learn:</label>
+                </td>
+                <td>
+                    <input type="radio" id="tamil" name="language" value="Tamil" />
+                    <label for="tamil">Tamil</label><br />
+                    <input type="radio" id="kannada" name="language" value="Kannada" />
+                    <label for="kannada">Kannada</label><br />
+                    <input type="radio" id="malayalam" name="language" value="malayalam" />
+                    <label for="malayalam">Malayalam</label>
+                </td>
+            </tr>
+        </table>
+        <button id="normal_btn" onclick="return click_btn()">Button</button>
+        <input type="submit" name="submit_btn" id="submit_btn" />
+        <input type="reset" id="reset_btn" name="reset_btn" value="Reset Form" />
+    </form>
+
+</body>
+
+</html>
