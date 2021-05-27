@@ -24,7 +24,7 @@ function expandLink() {
 }
 
 function submitForm() {
-    // validation for name field
+    //validation for name field
     if (document.getElementById("username").value == "") {
         alert("Please enter name");
         document.getElementById("username").focus();
@@ -91,9 +91,17 @@ function onchange_mobile(mobile_number) {
     console.log(mobile_number);
 }
 
+function verify_mobile(mobile) {
+    var key = event.key;
+    if (key <= 9) {
+        console.log(key);
+    }
+}
+
 function click_btn() {
     console.log('Button is clicked');
-    return false;
+    event.preventDefault(); // prevents default behavior (form submission)
+    //return false;
 }
 
 function handle_input_length(elem) {
@@ -101,6 +109,8 @@ function handle_input_length(elem) {
     console.log("Length of value entered: " + elem.value.length)
 
     if (event.keyCode == 13) {
-        alert("Enter is pressed")
+        alert("Enter is pressed");
+        event.preventDefault();
+        console.log("Hi");
     }
 }

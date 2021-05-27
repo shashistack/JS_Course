@@ -3,14 +3,16 @@
 
 <head>
     <title>JavaScript Events</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 </head>
 
 <body onload="bodyLoaded()">
     <div style="width: 300px; color: green; border: 1px solid red; padding: 10px">
         Events
     </div>
-    <!-- <noscript>Javascript is disabled in your browser</noscript> -->
+    <noscript>Javascript is disabled in your browser</noscript>
     <script src="js/events.js"></script>
+    <script src="js/handle_events.js"></script>
     <h2>Events in Javascript</h2>
 
     <button onclick='btn_click(); btn2_click()'>I am a Button</button>
@@ -23,7 +25,8 @@
         <p><b>Enter your information</b></p>
         <p>
             <label>Name</label>:
-            <input type="text" id="username" name="username" maxlength="30" onblur="blur_name()" />
+            <input type="text" id="username" name="username" maxlength="30" onblur="blur_name()"
+                onkeyup="handle_input_length(this)" />
         </p>
         <p>
             <label>Password</label>:
@@ -33,7 +36,7 @@
         <p>
             Mobile:
             <input type="text" name="mobile" id="mobile_no" placeholder="909090909090"
-                onchange="onchange_mobile(this.value)" />
+                onchange="onchange_mobile(this.value)" onkeydown="verify_mobile(this)" />
         </p>
         <p>City: <input type="text" name="city" id="city" /></p>
         <span>I have a </span><br />
@@ -44,7 +47,7 @@
         <input type="checkbox" id="vehicle3" name="vehicle" value="Boat" />
         <label for="vehicle3"> boat</label><br /><br />
         <textarea placeholder="Write something about yourself" id="biography" name="biography" rows="4" cols="40"
-            onkeyup="handle_input_length(this, Event)"></textarea>
+            onkeyup="handle_input_length(this)"></textarea>
         <br />
         <table id="inside_form">
             <tr>
@@ -78,6 +81,16 @@
         <input type="submit" name="submit_btn" id="submit_btn" />
         <input type="reset" id="reset_btn" name="reset_btn" value="Reset Form" />
     </form>
+
+    <p id="demo"></p>
+
+    <input id="sample" type="text" value="Some input field">
+    <script>
+        // attach event for an element with id
+        document.getElementById("sample").addEventListener("focus", function () {
+            document.getElementById("sample").value = "New Value";
+        });
+    </script>
 
 </body>
 
