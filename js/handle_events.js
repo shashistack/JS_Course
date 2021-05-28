@@ -26,3 +26,4 @@ else if (window.addEventListener) {
 else {
     alert("The browser does not support Javascript event binding");
 }
+
