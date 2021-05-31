@@ -127,11 +127,13 @@
         }
 
         function start_mouse_track() {
+            event.preventDefault(); // prevents browser from firing form submit event
             // Attach mousemove event on the document
             document.addEventListener("mousemove", mouseMoved);
         }
 
         function stop_mouse_track() {
+            event.preventDefault();
             // Remove the event handler from the document
             document.removeEventListener("mousemove", mouseMoved);
         }

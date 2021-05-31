@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <title>JavaScript Arrays</title>
+    <meta name="description" content="Introduction to HTML" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Jquery" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <script src="js/arrays.js"></script>
+    <style>
+        #div1 {
+            padding: 5px;
+            border: 1px solid blue;
+            color: red;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- This is a comment, not displayed on the page -->
+    <div id="div1">
+        <h3>Arrays</h3>
+    </div>
+
+    <script>
+        var arr = [1, 2, 3, 4, 5]; // default way to declare array
+        console.log(arr);
+
+        var arr2 = new Array(6, 7, 8, 9, 10); // old fashion
+        console.log(arr2);
+
+        console.log("Length of array arr is: " + arr.length); // print array length
+
+        var arr3 = arr.concat(arr2); // join two arrays
+        console.log(arr3);
+
+        var arr4 = arr.join("-"); // join array elements with a separator
+        console.log(arr4);
+
+        var arr5 = [];
+        for (let i = 1; i <= 10; i++) { // dynamically adding values to array
+            arr5[i - 1] = i;
+        }
+        console.log(arr5);
+
+        var arr6 = [];
+        for (let i = 1; i <= 10; i++) { // dynamically adding values to array using push
+            arr6.push(i);
+        }
+        console.log(arr6);
+
+        console.log("Looping through Array with forEach");
+        arr.forEach(function (val, ind, arr) {
+            console.log("Index is " + ind);
+            console.log("Value is " + val);
+        });
+
+        console.log("Looping through Array with forEach");
+        var new_arr = [];
+        arr.forEach(multiplyByTwo);
+        function multiplyByTwo(val) {
+            new_arr.push(val * 2);
+        }
+        console.log(new_arr);
+
+        // Associative array (object) with keys and values
+        var ass_arr = { 'a': 1, 'b': 2, 'c': 3 };
+        console.log(ass_arr);
+        for (x in ass_arr) { // looping with index
+            console.log("Index is: " + x + ", Value is: " + ass_arr[x]);
+        }
+
+    </script>
+</body>
+
+</html>
