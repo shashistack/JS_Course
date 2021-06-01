@@ -70,6 +70,63 @@
             console.log("Index is: " + x + ", Value is: " + ass_arr[x]);
         }
 
+        console.log("Array Pop Function");
+        var my_arr = [1, 4, 9];
+        console.log(my_arr.pop()); // removes the last element from an array
+        console.log(my_arr);
+
+        console.log("Array Every Function");
+        var my_arr = [2, 4, 6, 9, 10];
+        // it will return true/false based on whether every element satisfies a condition 
+        console.log(my_arr.every(isDivisibleByTwo));
+
+        function isDivisibleByTwo(element, index, array) {
+            return (element % 2 == 0);
+        }
+
+        console.log("Array Filter Function");
+        var my_arr = [1, 3, 5, 8, 9];
+        // check condition on every element of array
+        var filtered_array = my_arr.filter(isOdd);
+        console.log(filtered_array);
+        //console.log(my_arr);
+
+        function isOdd(element, index, array) {
+            return (element % 2 == 1);
+        }
+
+        console.log("Array Map Function");
+        var numbers = [1, 4, 9];
+        // apply condition on every element of array
+        var roots = numbers.map(Math.sqrt);
+        console.log("Square roots are: " + roots);
+        //console.log(numbers);
+
+        console.log("Map with Anonymous Function");
+        var a = [1, 2, 3];
+        let b = a.map(function (x) { return x * 5; });
+        console.log(b);
+
+        console.log("Map with Arrow Function");
+        let c = a.map((x) => x * 2);
+        console.log(c);
+
+        let d = a.map(multiplyByThree);
+        function multiplyByThree(val) {
+            return val * 3;
+        }
+        console.log(d);
+
+        let e = a.map((val) => val * 3); // short syntax using arrow function
+        console.log(e);
+
+        let my_new_arr = [1, 2, 3, 4, 5];
+        console.log(my_new_arr.reduce(getSum));
+
+        function getSum(result, num) {
+            result = result + num;
+            return result;
+        }
     </script>
 </body>
 
