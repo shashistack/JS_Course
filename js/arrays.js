@@ -64,7 +64,7 @@ var my_arr = [1, 3, 5, 8, 9];
 // check condition on every element of array
 var filtered_array = my_arr.filter(isOdd);
 console.log(filtered_array);
-//console.log(my_arr);
+console.log("Original Array:" + my_arr);
 
 function isOdd(element, index, array) {
     return (element % 2 == 1);
@@ -113,7 +113,7 @@ console.log(numbers.find(aboveTen)); // retuns the first element that satisfies 
 
 console.log("Array Includes example");
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
-var includes_result = fruits.includes("Mango");
+var includes_result = fruits.includes("Mango"); // returns true/false
 console.log("Includes result: " + includes_result);
 
 console.log("Array indexOf Method");
@@ -127,17 +127,17 @@ var odd_nos = [1, 3, 5, 7, 9, 11, 13, 15, 11, 11, 17, 19];
 console.log(odd_nos);
 console.log("Last position of number 11: " + odd_nos.lastIndexOf(11));
 
-console.log("Array Slice method");
+console.log("Array Slice method"); // extract elements from array
 var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 // extract the array elements starting from index 1 and stop at index 3
-var citrus = fruits.slice(1, 3);
+var citrus = fruits.slice(1, 3); // "Orange", "Lemon"
 console.log("Slice Result: " + citrus);
 console.log(fruits);
 console.log(fruits.slice(-3)); // [ "Lemon", "Apple", "Mango" ]
 console.log(fruits.slice(2, -1)); // [ "Lemon", "Apple" ]
 console.log(fruits.slice(-3, -2)); // [ "Lemon" ]
 
-console.log("Array Splice method");
+console.log("Array Splice method"); // splice removes elements from array
 var arr = [1, 2, 3, 4, 5];
 arr.splice(2, 1); // starting from position 2, remove one element from array
 console.log("After removing element at position 2: " + arr); // [1, 2, 4, 5]
@@ -147,3 +147,4 @@ arr.splice(2, 0, 3, 4, 5); // remove 0 elements from position 2, and add new ele
 console.log("After another splice operation: " + arr); // [1,2,3,4,5]
 arr.splice(3, 1, "Hi", "Hello"); // remove 1 element from positon 3, and then add new elements
 console.log("After another splice operation: " + arr);
+
