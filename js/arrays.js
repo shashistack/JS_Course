@@ -148,3 +148,31 @@ console.log("After another splice operation: " + arr); // [1,2,3,4,5]
 arr.splice(3, 1, "Hi", "Hello"); // remove 1 element from positon 3, and then add new elements
 console.log("After another splice operation: " + arr);
 
+console.log("Array Reverse Function"); // reverses the elements of an array
+var arr = ['Apple', 'Lemon', 'Orange']; //[1, 2, 3, 4, 5];
+arr.reverse();
+console.log(arr);
+
+console.log("Array shift Function"); // removes the first element
+var arr = ['Apple', 'Lemon', 'Orange']; //[1, 2, 3, 4, 5];
+var removed_element = arr.shift();
+console.log(removed_element);
+console.log(arr);
+
+console.log("Array some Function"); // returns true if at least one element satisfies a condition
+function isBigEnough(e, index, array) {
+    return (e >= 10);
+}
+var arr = [1, 2, 3, 4, 5];
+var result = arr.some(isBigEnough);
+console.log(result);
+
+console.log("Array sort Function"); // sorts the values alphabetically
+var arr = ["orange", "mango", "banana", "sugar"]; // [4, 2, 6, 1]
+arr.sort();
+console.log(arr);
+
+console.log("Array toString Function"); // returns a string representing the array
+var arr = ["orange", "mango", "banana", "sugar"];
+var str = arr.toString();
+console.log(str);

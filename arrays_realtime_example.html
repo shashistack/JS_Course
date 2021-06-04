@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>JavaScript Arrays Realtime Scenario</title>
+    <meta name="description" content="Introduction to HTML" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Jquery" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <style>
+        #div1 {
+            padding: 5px;
+            border: 1px solid blue;
+            color: red;
+            width: 300px;
+        }
+
+        #todo_items {
+            border: 1px solid orange;
+        }
+
+        #todo_items li {
+            color: blue;
+            font-size: 25px;
+        }
+
+        #add_todo_task {
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body onload="getTodoItems()">
+    <!-- This is a comment, not displayed on the page -->
+    <div id="div1">
+        <h3>Employee ToDo List</h3>
+    </div>
+
+    <input type="text" id="todo_task" name="todo_task" placeholder="Add Todo Task">
+    <button id="add_todo_task" onclick="addTodo()">Add</button>
+    <div id="todo_items">
+        <ul id="todo_list">
+        </ul>
+    </div>
+
+    <script src="js/arrays_scenario.js"></script>
+</body>
+
+</html>
