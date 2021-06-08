@@ -62,3 +62,6 @@ function getName() {
   alert("Welcome: " + name);
 }
 
+// Confirm
+var permission = confirm("Are you sure you want to delete the item?");
+console.log(permission);
